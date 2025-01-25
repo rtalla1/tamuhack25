@@ -8,12 +8,12 @@ function index() {
     fetch('http://localhost:8080/api/home')
       .then((res) => res.json())
       .then((data) => {
-        setMessage(data.message)
+        console.log(data.message)
       })
   }, [])
 
   return (
-    <div>{message}</div>
+    <h1>Welcome to HeartLink!</h1>
   )
 }
 
