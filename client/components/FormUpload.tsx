@@ -22,7 +22,7 @@ export default function FormUpload() {
 
   return (
     <div style={containerStyle}>
-      <h2>Upload Text to S3</h2>
+      <h2>Enter Information Here</h2>
       <form onSubmit={handleSubmit} style={formStyle}>
         <textarea
           style={textareaStyle}
