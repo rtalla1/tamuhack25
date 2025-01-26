@@ -4,7 +4,7 @@ function Member() {
     return (
         <div>
             <h1 style={title}>For Family Members</h1>
-            <h2 style={desc1}>Please enter any information you would like to help your family member remember.</h2>
+            <h2 style={desc1}>Provide any information that may help your loved one recall important memories.</h2>
             <h3 style={desc2}>Please include as much context and detail as possible, including names and important timelines.</h3>
             <FormUpload />
         </div>
@@ -12,6 +12,7 @@ function Member() {
 }
 
 const title: React.CSSProperties = {
+    textAlign: 'center',
     color: "#8A77D9"
 }
 

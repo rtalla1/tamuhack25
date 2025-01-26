@@ -30,8 +30,10 @@ function MyApp({ Component, pageProps }: AppProps) {
       <SignedOut>
         <div style={welcomeMsg} className={dmsans.className}>
           <h1>Welcome to HeartLink!</h1>
-          <div style={{textAlign: 'center',fontWeight: 'bold', color: '#8A77D9', width: '60%', margin: '0 auto' }}>Our goal is to help enhance the day to day lives and assist with memory engagement for those in long-term memory care units</div>
+          <div style={{fontWeight: 'bold', color: '#8A77D9', width: '60%', margin: '0 auto' }}>Our goal is to help enhance the day to day lives and assist with memory support for those in long-term memory care units</div>
           <h4>❤️</h4>
+          <h5 style={{marginBottom: '1%'}}>How Link Bot Helps</h5>
+          <div style={desc}>Our chatbot, named Link, aims to aid in Reminiscence Therapy for patients with dementia by tailoring conversations specifically to the patient's memories, encouraging memory engagement and promoting cognitive stimulation.</div>
         </div>
       </SignedOut>
 
@@ -42,6 +44,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       </SignedIn>
     </ClerkProvider>
   );
+}
+
+const desc: React.CSSProperties = {
+  fontSize: '25px',
+  color: 'black', 
+  width: '60%', 
+  margin: '0 auto' 
 }
 
 const buttonStyle: React.CSSProperties = {

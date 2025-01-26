@@ -31,7 +31,7 @@ export default function FormUpload() {
           placeholder="Enter your text here..."
         />
         <button type="submit" style={buttonStyle} disabled={isLoading}>
-          {isLoading ? "Uploading..." : "Upload to S3"}
+          {isLoading ? "Uploading..." : "Done"}
         </button>
       </form>
       {message && <p>{message}</p>}
