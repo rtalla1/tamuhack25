@@ -4,7 +4,6 @@ function Chat() {
     return (
         <div>
             <h1 style={title}>Chat With Link!</h1>
-            <img src=""></img>
             <ChatBox></ChatBox>
         </div>
     )

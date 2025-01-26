@@ -35,11 +35,11 @@ const ChatBox: React.FC = () => {
       setTimeout(() => {
         setMessages(prevMessages => [
           ...prevMessages,
-          { sender: 'chatbot', text: `You said: ${userInput}` },
+          { sender: 'chatbot', text: `Chatbot response: ${userInput}` },
         ]);
       }, 1000);
 
-      // Start image switching for 2 seconds
+      // Start image switching for 3 seconds
       startImageSwitching();
     }
   };
@@ -52,8 +52,8 @@ const ChatBox: React.FC = () => {
       setImageIndex(prevIndex => (prevIndex === 0 ? 1 : 0));  // Toggle between 0 and 1
       counter += 1;
 
-      // Stop switching after 2 seconds (4 toggles with 500ms interval)
-      if (counter >= 4) {
+      // Stop switching after 3 seconds (for 2 seconds: 4 toggles with 500ms interval)
+      if (counter >= 6) {
         clearInterval(interval);
         setIsSwitching(false); // Reset flag after switching stops
       }
@@ -106,7 +106,7 @@ const chatboxContainer: React.CSSProperties = {
   textAlign: 'center',
   width: '80%',
   maxWidth: '600px',         // Optional: max width for responsiveness
-  height: '60vh',            // Reduced height for the chatbox
+  height: '50vh',            // Reduced height for the chatbox
   border: '1px solid #ccc',
   padding: '10px',
   backgroundColor: '#f9f9f9',
@@ -124,8 +124,8 @@ const imageContainer: React.CSSProperties = {
 };
 
 const imageStyle: React.CSSProperties = {
-  width: '150px',
-  height: '150px',
+  width: '20%',
+  height: 'auto',
   objectFit: 'cover',
   borderRadius: '10px',
 };
