@@ -30,7 +30,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <SignedOut>
         <div style={welcomeMsg} className={dmsans.className}>
           <h1>Welcome to HeartLink!</h1>
-          <h3>Stay in touch with your loved ones ❤️</h3>
+          <div style={{textAlign: 'center',fontWeight: 'bold', color: '#8A77D9', width: '60%', margin: '0 auto' }}>Our goal is to help enhance the day to day lives and assist with memory engagement for those in long-term memory care units</div>
+          <h4>❤️</h4>
         </div>
       </SignedOut>
 
@@ -54,6 +55,7 @@ const buttonStyle: React.CSSProperties = {
 };
 
 const welcomeMsg: React.CSSProperties = {
+  alignContent: 'center',
   textAlign: 'center',
   fontSize: '2rem',
 };
