@@ -13,7 +13,7 @@ function Dashboard() {
             <p>Are you a family member or the user?</p>
             <div style={buttonContainerStyle}>
                 <button onClick={() => router.push('/member')} className={dmsans.className} style={buttonStyle}>Family Member</button>
-                <button onClick={() => router.push('/chat')}className={dmsans.className} style={buttonStyle}>User</button>
+                <button onClick={() => router.push('/chat')} className={dmsans.className} style={buttonStyle}>User</button>
             </div>
         </div>
     );
