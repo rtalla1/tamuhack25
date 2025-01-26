@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [pageProps.__clerk_ssr_state?.userId]);
 
   return (
-    <ClerkProvider {...pageProps}>
+    <ClerkProvider afterSignOutUrl={"/"} {...pageProps}>
       <header className={fraunces.className} style={headerStyle}>
         <div style={logoContainer}>
           <img src="/heartlink.png" width={50} height={50} alt="HeartLink Logo" />
@@ -27,10 +27,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
         <div>
           <SignedOut>
-            <SignInButton />
+            <SignInButton forceRedirectUrl={"/dashboard"} mode="modal">
+              <button style={buttonStyle} className={dmsans.className}>Sign In</button>
+            </SignInButton>
           </SignedOut>
           <SignedIn>
-            <UserButton />
+            <UserButton showName={true} />
           </SignedIn>
         </div>
       </header>
@@ -50,14 +52,24 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
+const buttonStyle: React.CSSProperties = {
+  fontSize: '2rem', // Bigger font size
+  borderRadius: '10px', // Rounded corners
+  border: 'none',
+  color: 'white',
+  cursor: 'pointer',
+  textAlign: 'center',
+  fontWeight: 'normal',
+};
+
 const headerStyle = {
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  padding: '20px',
-  backgroundColor: '#4A90E2',
+  padding: '15px',
+  background: 'linear-gradient(to right, #6A5ACD,rgb(239, 209, 255))',
   color: 'white',
-  fontSize: '18px',
+  fontSize: '1.75rem',
   borderRadius: '5px',
 };
 

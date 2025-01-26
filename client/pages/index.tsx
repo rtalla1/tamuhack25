@@ -13,13 +13,16 @@ function index() {
   }, [])
 
   return (
-    <h1 style={welcomeMsg}>Welcome to HeartLink!</h1>
+    <div style={welcomeMsg}>
+      <h1>Welcome to HeartLink!</h1>
+      <h3>Stay in touch with your loved ones ❤️</h3>
+    </div>
   )
 }
 
 const welcomeMsg: React.CSSProperties = {
   textAlign: 'center',
-  fontSize: '5rem',
+  fontSize: '2rem',
 }
 
 export default index
