@@ -12,8 +12,8 @@ function Chat() {
 
 const title: React.CSSProperties = {
     color: "#8A77D9",
-    textAlign: "center"    
-
+    textAlign: "center",
+    marginTop: "1%"
 }
 
 export default Chat
