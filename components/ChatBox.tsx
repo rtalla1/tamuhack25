@@ -11,7 +11,7 @@ const ChatBox: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [chatbotReady, setChatbotReady] = useState<boolean>(false);
   const [userName, setUserName] = useState<string | null>(null);
-  const [s3Loaded, setS3Loaded] = useState<boolean>(false); // ✅ Prevent multiple API calls
+  const [s3Loaded, setS3Loaded] = useState<boolean>(false);
 
   const images = ["/robot0.PNG", "/robot2.png"];
   const [imageIndex, setImageIndex] = useState<number>(0);
@@ -53,7 +53,7 @@ const ChatBox: React.FC = () => {
       ]);
 
       setChatbotReady(true);
-      setS3Loaded(true); // ✅ Prevents multiple fetch calls
+      setS3Loaded(true);
     } catch (error) {
       console.error("❌ Error fetching S3 files:", error);
 
@@ -61,7 +61,7 @@ const ChatBox: React.FC = () => {
         { sender: "chatbot", text: "I couldn't retrieve the memory bank. Let's continue the conversation anyway!" },
       ]);
 
-      setS3Loaded(true); // ✅ Avoids repeated errors
+      setS3Loaded(true);
     }
 
     setLoading(false);
