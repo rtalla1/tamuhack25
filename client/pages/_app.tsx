@@ -1,7 +1,6 @@
 import '@/styles/globals.css';
 import { ClerkProvider, SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/nextjs';
 import type { AppProps } from 'next/app';
-import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { DM_Sans, Fraunces } from '@next/font/google';
 
@@ -9,25 +8,16 @@ const dmsans = DM_Sans({ subsets: ['latin'] });
 const fraunces = Fraunces({ subsets: ['latin'] });
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const router = useRouter();
-
-  // Redirect signed-in users to /dashboard if not already there
-  useEffect(() => {
-    if (pageProps.__clerk_ssr_state?.userId && router.pathname === '/') {
-      router.push('/dashboard'); // Redirect only if on landing page
-    }
-  }, [pageProps.__clerk_ssr_state?.userId]);
-
   return (
-    <ClerkProvider afterSignOutUrl={"/"} {...pageProps}>
+    <ClerkProvider {...pageProps}>
       <header className={fraunces.className} style={headerStyle}>
         <div style={logoContainer}>
-          <img src="/heartlink.png" width={50} height={50} alt="HeartLink Logo" />
+          <img src="/heartlink.png" width={75} height={75} alt="HeartLink Logo"/>
           <h1 style={titleStyle}>HeartLink</h1>
         </div>
         <div>
           <SignedOut>
-            <SignInButton forceRedirectUrl={"/dashboard"} mode="modal">
+            <SignInButton mode="modal">
               <button style={buttonStyle} className={dmsans.className}>Sign In</button>
             </SignInButton>
           </SignedOut>
@@ -38,14 +28,15 @@ function MyApp({ Component, pageProps }: AppProps) {
       </header>
 
       <SignedOut>
-        <main className={dmsans.className} style={mainStyle}>
-          <Component {...pageProps} />
-        </main>
+        <div style={welcomeMsg} className={dmsans.className}>
+          <h1>Welcome to HeartLink!</h1>
+          <h3>Stay in touch with your loved ones ❤️</h3>
+        </div>
       </SignedOut>
 
       <SignedIn>
         <main className={dmsans.className} style={mainStyle}>
-          {router.pathname.startsWith('/dashboard') ? <Component {...pageProps} /> : null}
+          <Component {...pageProps} />
         </main>
       </SignedIn>
     </ClerkProvider>
@@ -62,6 +53,11 @@ const buttonStyle: React.CSSProperties = {
   fontWeight: 'normal',
 };
 
+const welcomeMsg: React.CSSProperties = {
+  textAlign: 'center',
+  fontSize: '2rem',
+};
+
 const headerStyle = {
   display: 'flex',
   justifyContent: 'space-between',
@@ -70,7 +66,7 @@ const headerStyle = {
   background: 'linear-gradient(to right, #6A5ACD,rgb(239, 209, 255))',
   color: 'white',
   fontSize: '1.75rem',
-  borderRadius: '5px',
+  borderRadius: '10px',
 };
 
 const logoContainer = {

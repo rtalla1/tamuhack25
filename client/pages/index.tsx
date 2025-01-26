@@ -1,28 +1,41 @@
-import React, { useEffect, useState } from 'react'
+import { DM_Sans, Fraunces } from "@next/font/google";
+import { useRouter } from 'next/router';
 
-function index() {
+const fraunces = Fraunces({ subsets: ['latin'] });
+const dmsans = DM_Sans({ subsets: ['latin'] });
 
-  const [message, setMessage] = useState('Loading...')
+function Dashboard() {
+    const router = useRouter();
 
-  useEffect(() => {
-    fetch('http://localhost:8080/api/home')
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data.message)
-      })
-  }, [])
-
-  return (
-    <div style={welcomeMsg}>
-      <h1>Welcome to HeartLink!</h1>
-      <h3>Stay in touch with your loved ones ❤️</h3>
-    </div>
-  )
+    return (        
+        <div style={promptStyle}>
+            <h1>Hey There!</h1>
+            <p>Are you a family member or the user?</p>
+            <div style={buttonContainerStyle}>
+                <button onClick={() => router.push('/member')} className={dmsans.className} style={buttonStyle}>Family Member</button>
+                <button onClick={() => router.push('/chat')}className={dmsans.className} style={buttonStyle}>User</button>
+            </div>
+        </div>
+    );
 }
 
-const welcomeMsg: React.CSSProperties = {
-  textAlign: 'center',
-  fontSize: '2rem',
-}
+const promptStyle: React.CSSProperties = {
+    textAlign: 'center',
+    fontSize: '2.5rem',
+};
 
-export default index
+const buttonContainerStyle: React.CSSProperties = {
+    display: 'flex',
+    justifyContent: 'center',
+    gap: '2.5%',
+    marginTop: '7.5%',
+};
+
+const buttonStyle: React.CSSProperties = {
+    fontSize: '2rem', // Bigger font size
+    borderRadius: '10px', // Rounded corners
+    border: 'none',
+    textAlign: 'center',
+};
+
+export default Dashboard;
