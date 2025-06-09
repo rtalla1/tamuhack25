@@ -46,8 +46,8 @@ We recognized that dementia patients in long-term care often lack personalized a
 
 1. Clone the repo:
     ```bash
-    git clone https://github.com/your-username/heartlink.git
-    cd heartlink
+    git clone https://github.com/rtalla1/tamuhack25.git
+    cd tamuhack25
     ```
 
 2. Install dependencies:
