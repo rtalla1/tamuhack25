@@ -2,24 +2,24 @@
 
 HeartLink is a personalized AI-powered chatbot designed to support dementia patients in long-term care facilities by engaging them in conversations tailored to their personal memories and experiences. The platform empowers family members to contribute meaningful memories and enables caregivers to facilitate more personalized interactions for their loved ones.
 
-## 💡 Inspiration
+## Inspiration
 
 We recognized that dementia patients in long-term care often lack personalized attention due to resource constraints. We saw an opportunity to leverage Large Language Models (LLMs) to create an application that helps enhance the quality of care and engagement for these patients through memory-based conversations.
 
-## 🚀 What It Does
+## What It Does
 
 - Family members log into the HeartLink website to upload personal memories, stories, and details as text entries.
 - Caregivers can log in to HeartLink to access a chatbot interface.
 - Patients can interact with **Link**, the chatbot, which dynamically tailors its conversation using the personalized memory data contributed by the family.
 - The chatbot provides an engaging experience, including a speaking avatar to make interactions more natural.
 
-## 🛠️ How We Built It
+## How We Built It
 
 - **Frontend/UI**: [Next.js](https://nextjs.org/) with React for an intuitive and cohesive web interface.
 - **Chatbot / RAG LLM**: Built using [AWS Bedrock](https://aws.amazon.com/bedrock/) to power the Retrieval-Augmented Generation (RAG) architecture, enabling personalized responses based on uploaded memory data.
 - **Database**: AWS services used for securely storing user-contributed memories and chat data.
 
-## ⚙️ Features
+## Features
 
 ✅ Family member authentication  
 ✅ Memory uploading (text-based)  
@@ -27,19 +27,6 @@ We recognized that dementia patients in long-term care often lack personalized a
 ✅ Chatbot with personalized responses  
 ✅ Chatbot avatar with "speaking" animation  
 ✅ Cohesive UI/UX  
-
-## 🚧 Challenges We Overcame
-
-- Integrating RAG LLM architecture with the memory database
-- Displaying live LLM-generated chat responses in the UI in real-time
-- Handling authentication flows for two distinct user groups (family members and caregivers)
-
-## 🎉 Accomplishments
-
-- Functional and styled Next.js frontend  
-- Complete user authentication system  
-- Real-time chatbot interface with visual avatar  
-- Successful integration of personalized RAG LLM chatbot  
 
 ## 📚 What We Learned
 
