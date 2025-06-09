@@ -21,28 +21,28 @@ We recognized that dementia patients in long-term care often lack personalized a
 
 ## Features
 
-✅ Family member authentication  
-✅ Memory uploading (text-based)  
-✅ Caregiver authentication  
-✅ Chatbot with personalized responses  
-✅ Chatbot avatar with "speaking" animation  
-✅ Cohesive UI/UX  
+- Family member authentication  
+- Memory uploading (text-based)  
+- Caregiver authentication  
+- Chatbot with personalized responses  
+- Chatbot avatar with "speaking" animation  
+- Cohesive UI/UX  
 
-## 📚 What We Learned
+## What We Learned
 
 - How to design and implement a Retrieval-Augmented Generation LLM pipeline  
 - Building user-friendly and accessible interfaces with Next.js and React  
 - Uploading and managing structured data for AI applications in AWS  
 - Managing frontend/backend integration challenges in real-time applications  
 
-## 🚀 Future Plans
+## Future Plans
 
 - **Audio-to-text**: Enable voice-based interactions for patients who may struggle with typing  
 - **Photo uploads**: Allow family members to upload photos, enriching memory context and chatbot conversation depth  
 - **Enhanced chatbot display**: More natural conversational flow and dynamic avatar animations  
 - **Mobile optimization**: Ensure a seamless experience across devices for caregivers and families  
 
-## 🏗️ Getting Started (For Devs)
+## Getting Started (For Devs)
 
 1. Clone the repo:
     ```bash
@@ -66,7 +66,7 @@ We recognized that dementia patients in long-term care often lack personalized a
 
 5. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## 🤝 Contributing
+## Contributing
 
 Pull requests and issues are welcome! If you'd like to contribute improvements or new features, feel free to fork the project and submit a PR.
 
